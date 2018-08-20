@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+    position: absolute;
+}
+.heldentum{
+    width: auto;
+    transform-style: preserve-3d;
+
+}
+div{
+    width: 236px;
+    height: 236px;
+    transition: transform .4s ease-in;
+
+
+}
+.front{
+    z-index: 1;
+    position: relative;
+    backface-visibility: hidden ;
+
+}
+.back{
+    position: relative;
+    bottom: 236px;
+    background-color: gray;
+    color: white;
+    font-size: 2em;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(-180deg) translateZ(0);
+    backface-visibility: hidden ;
+
+
+
+}
+.heldentum:hover .front{
+    transform: rotateY(-180deg);
+}
+.heldentum:hover .back{
+    transform: rotateY(0deg);
+}
